@@ -27,9 +27,14 @@
 		</dependency>
 
 		<dependency>
+<<<<<<< Updated upstream
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+=======
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+>>>>>>> Stashed changes
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
