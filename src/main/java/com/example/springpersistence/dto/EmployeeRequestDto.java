@@ -9,5 +9,6 @@ public class EmployeeRequestDto {
     private long id;
     private  String firstName;
     private String lastName;
-    private String departmentName;
+
+    private DepartmentRequestDto department;
 }

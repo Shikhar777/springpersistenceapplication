@@ -6,6 +6,8 @@ import com.example.springpersistence.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/employee")
 public class EmployeeController {
@@ -35,5 +37,11 @@ public class EmployeeController {
     public EmployeeResponseDto deleteById(@PathVariable("id") long id)
     {
         return  employeeService.deleteById(id);
+    }
+
+    @GetMapping(value = "/department/{id}")
+    public List<EmployeeResponseDto> getEmployeeListByDepartment(@PathVariable("id") long departmentId)
+    {
+        return employeeService.getEmployeeListByDepartment(departmentId);
     }
 }
