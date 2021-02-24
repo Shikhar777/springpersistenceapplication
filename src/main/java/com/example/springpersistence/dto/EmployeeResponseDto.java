@@ -8,9 +8,10 @@ import lombok.Setter;
 @Setter
 public class EmployeeResponseDto {
 
-    private long id;
+    private Long id;
     private  String firstName;
     private String lastName;
+    private String employeeCode;
 
     private DepartmentResponseDto department;
 

@@ -6,9 +6,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EmployeeRequestDto {
-    private long id;
+    private Long id;
     private  String firstName;
     private String lastName;
+    private String employeeCode;
 
     private DepartmentRequestDto department;
 }

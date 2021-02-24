@@ -9,8 +9,8 @@ import java.util.List;
 public interface EmployeeService {
 
     EmployeeResponseDto saveDetails(EmployeeRequestDto employeeRequestDto);
-    EmployeeResponseDto findById(long id);
-    EmployeeResponseDto updateEmployee(long id, EmployeeRequestDto employeeRequestDto);
-    EmployeeResponseDto deleteById(long id);
-    List<EmployeeResponseDto> getEmployeeListByDepartment(long departmentId);
+    EmployeeResponseDto findById(Long id);
+    EmployeeResponseDto updateEmployee(Long id, EmployeeRequestDto employeeRequestDto);
+    EmployeeResponseDto deleteById(Long id);
+    List<EmployeeResponseDto> getEmployeeListByDepartment(Long departmentId);
 }

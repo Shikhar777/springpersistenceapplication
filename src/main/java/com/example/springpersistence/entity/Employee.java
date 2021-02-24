@@ -15,9 +15,10 @@ public class Employee {
     @Id
     @GenericGenerator(name = "employee_id_seq", strategy = "increment")
     @GeneratedValue(generator = "employee_id_seq", strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
+    private String employeeCode;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonBackReference

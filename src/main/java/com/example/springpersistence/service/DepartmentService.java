@@ -7,5 +7,6 @@ import com.example.springpersistence.entity.Department;
 public interface DepartmentService {
 
     DepartmentResponseDto createDepartment(DepartmentRequestDto departmentRequestDto);
-    Department getDepartmentById(long id);
+    Department getDepartmentById(Long id);
+    DepartmentResponseDto updateDepartment(Long departmentId, DepartmentRequestDto departmentRequestDto);
 }

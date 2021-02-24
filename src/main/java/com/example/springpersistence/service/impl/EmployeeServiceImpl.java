@@ -50,7 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeResponseDto findById(long id) {
+    public EmployeeResponseDto findById(Long id) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
         if (employeeOptional.isPresent()) {
             EmployeeResponseDto employeeResponseDto = new EmployeeResponseDto();
@@ -63,7 +63,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeResponseDto updateEmployee(long id, EmployeeRequestDto employeeRequestDto) {
+    public EmployeeResponseDto updateEmployee(Long id, EmployeeRequestDto employeeRequestDto) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
         if (employeeOptional.isPresent()) {
             Employee employee = employeeOptional.get();
@@ -89,7 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeResponseDto deleteById(long id) {
+    public EmployeeResponseDto deleteById(Long id) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
         if (employeeOptional.isPresent()) {
             Employee employee = employeeOptional.get();
@@ -104,7 +104,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<EmployeeResponseDto> getEmployeeListByDepartment(long departmentId)
+    public List<EmployeeResponseDto> getEmployeeListByDepartment(Long departmentId)
     {
 //        Department department = departmentRepository.findById(departmentId).get();
 //        List<Employee> employeeList = employeeRepository.findByDepartment(department);

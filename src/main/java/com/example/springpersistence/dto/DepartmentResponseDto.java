@@ -9,6 +9,6 @@ import lombok.Setter;
 // @Data -> instead of @Getter and @Setter we can write @Data
 public class DepartmentResponseDto {
 
-    private long id;
+    private Long id;
     private String departmentName;
 }
