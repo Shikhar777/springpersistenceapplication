@@ -2,12 +2,10 @@ package com.example.springpersistence.controller;
 
 import com.example.springpersistence.dto.DepartmentRequestDto;
 import com.example.springpersistence.dto.DepartmentResponseDto;
+import com.example.springpersistence.entity.Department;
 import com.example.springpersistence.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/department")
@@ -20,5 +18,11 @@ public class DepartmentController {
     public DepartmentResponseDto createDepartment(@RequestBody DepartmentRequestDto departmentRequestDto)
     {
         return departmentService.createDepartment(departmentRequestDto);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Department getDepartmentById(@PathVariable("id") long id)
+    {
+        return departmentService.getDepartmentById(id);
     }
 }

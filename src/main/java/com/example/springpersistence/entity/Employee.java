@@ -1,5 +1,6 @@
 package com.example.springpersistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -19,5 +20,6 @@ public class Employee {
     private String lastName;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonBackReference
     private Department department;
 }
