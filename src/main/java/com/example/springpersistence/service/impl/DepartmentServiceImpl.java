@@ -51,6 +51,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         employeeList.forEach(employee -> {
             employee.setEmployeeCode(departmentRequestDto.getDepartmentCode());
+            employee.setYearsOfExperience(departmentRequestDto.getDepYearsOfExperience());
         });
         employeeRepository.saveAll(employeeList);
         DepartmentResponseDto departmentResponseDto = new DepartmentResponseDto();

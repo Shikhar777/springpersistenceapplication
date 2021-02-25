@@ -10,4 +10,5 @@ public class DepartmentRequestDto {
     private Long id;
     private String departmentName;
     private String departmentCode;
+    private Integer depYearsOfExperience;
 }
