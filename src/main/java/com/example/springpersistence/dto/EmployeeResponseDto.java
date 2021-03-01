@@ -12,6 +12,7 @@ public class EmployeeResponseDto {
     private  String firstName;
     private String lastName;
     private String employeeCode;
+    private Integer yearsOfExperience;
 
     private DepartmentResponseDto department;
 

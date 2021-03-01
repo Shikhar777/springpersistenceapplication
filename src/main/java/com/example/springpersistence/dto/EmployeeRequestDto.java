@@ -10,6 +10,7 @@ public class EmployeeRequestDto {
     private  String firstName;
     private String lastName;
     private String employeeCode;
+    private Integer yearsOfExperience;
 
     private DepartmentRequestDto department;
 }

@@ -69,6 +69,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             Employee employee = employeeOptional.get();
             employee.setFirstName(employeeRequestDto.getFirstName());
             employee.setLastName(employeeRequestDto.getLastName());
+            employee.setYearsOfExperience(employeeRequestDto.getYearsOfExperience());
             Optional<Department> departmentOptional = departmentRepository.findById(employeeRequestDto.getDepartment().getId());
             if(departmentOptional.isPresent())
             {
@@ -111,6 +112,21 @@ public class EmployeeServiceImpl implements EmployeeService {
         //List<Employee> employeeList = employeeRepository.findByDepartment_Id(departmentId);
         //List<Employee> employeeList = employeeRepository.findEmployeeListByDepartmentId(departmentId);
         List<Employee> employeeList = employeeRepository.findEmployeeListByNativeQuery(departmentId);
+        List<EmployeeResponseDto> employeeResponseDtoList = new ArrayList<>();
+        for(Employee employee : employeeList)
+        {
+            EmployeeResponseDto employeeResponseDto = new EmployeeResponseDto();
+            BeanUtils.copyProperties(employee, employeeResponseDto);
+            employeeResponseDto.setDepartmentFromEntity(employee.getDepartment());
+            employeeResponseDtoList.add(employeeResponseDto);
+        }
+        return employeeResponseDtoList;
+    }
+
+    @Override
+    public List<EmployeeResponseDto> findMostExperiencedEmployee()
+    {
+        List<Employee> employeeList = employeeRepository.getMostExperiencedEmployee();
         List<EmployeeResponseDto> employeeResponseDtoList = new ArrayList<>();
         for(Employee employee : employeeList)
         {

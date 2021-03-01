@@ -44,4 +44,10 @@ public class EmployeeController {
     {
         return employeeService.getEmployeeListByDepartment(departmentId);
     }
+
+    @GetMapping(value = "/mostExperienced")
+    public List<EmployeeResponseDto> findMostExperiencedEmployee()
+    {
+        return employeeService.findMostExperiencedEmployee();
+    }
 }
